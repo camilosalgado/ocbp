@@ -10,16 +10,20 @@ class Medicamento extends Model
     protected $table = 'medicamentos';
     protected $fillable = [
         'codigo_medicamento',
+        'cod_insumo',
         'nombre_generico',
         'nombre_comercial',
         'id_formaf',
-        'concentracion',
         'id_formap',
+        'concentracion',
         'cantidad',
         'presentacion_comercial',
-        'forma_farmaceutica',
+        'id_grupomed',
+        'posnopos',
         'alto_costo',
+        'super_acosto',
         'regulado',
+        'precio_regulado',
         'user_id',
         'estado',
     ];

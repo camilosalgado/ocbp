@@ -1,7 +1,16 @@
+/*InitialPage Styles*/
+#wrapper {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+
 /*Sub Header Styles */
 #navbarDropdown {
     color: #ffffff !important;
 }
+
 
 
 /* Vue Select Styles*/
@@ -21,6 +30,50 @@
 .VueTables .table-responsive table .VueTables__row td {
     padding: 4px 2px 4px 10px !important;
 }
+
+.VueTables .table-responsive table thead th:nth-child(1) {
+    width: 220px !important;
+}
+.VueTables .table-responsive table thead th:nth-child(2) {
+    width: 220px !important;
+}
+.VueTables .table-responsive table thead th:nth-child(3) {
+    width: 180px !important;
+}
+.VueTables .table-responsive table thead th:nth-child(4) {
+    width: 240px !important;
+}
+.VueTables .table-responsive table thead th:nth-child(5) {
+    width: 100px !important;
+}
+.VueTables .table-responsive table thead th:nth-child(6) {
+    width: 60px !important;
+}
+.VueTables .table-responsive table thead th:nth-child(7) {
+    width: 60px !important;
+}
+.VueTables .table-responsive table thead th:nth-child(8) {
+    width: 60px !important;
+}
+.VueTables .table-responsive table thead th:nth-child(9) {
+    width: 100px !important;
+}
+.VueTables .table-responsive table thead th:nth-child(10) {
+    width: 100px !important;
+}
+.VueTables .table-responsive table thead th:nth-child(11) {
+    width: 200px !important;
+}
+.VueTables .table-responsive table thead th:nth-child(12) {
+    width: 100px !important;
+}
+.VueTables .table-responsive table thead th:nth-child(13) {
+    width: 100px !important;
+}
+.VueTables .table-responsive table thead th:nth-child(14) {
+    width: 160px !important;
+}
+
 
 .VueTables__search-field label {
     display: inline-block !important;

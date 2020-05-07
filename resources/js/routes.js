@@ -13,7 +13,7 @@ export const routes = [
     {
       name: 'home',
       path: '/home',
-      component: DashBoard,
+      component: Medicamentos,
         meta: {
             requiresAuth: true,
         }

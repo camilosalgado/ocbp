@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class FormaPresentacion extends Model
 {
     //
-    protected $table = 'forma_presentacion';
+    protected $table = 'forma_presentaciones';
     protected $fillable = [
         'descripcion',
         'user_id',

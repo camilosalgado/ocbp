@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>XENDORA</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -22,14 +22,11 @@
 
 </head>
 <body>
-    <div id="app">
-        @include('layouts/shared.Navbar')
+<div id="wrapper" style="background-image: url('{{ asset('assets/images/initial_business.jpg') }}')">
+    <main class="py-0">
+        @yield('content')
+    </main>
+</div>
 
-        <main class="py-0">
-            @yield('content')
-        </main>
-    </div>
-
-    <script src="{{ asset('js/app.js') }}" async></script>
 </body>
 </html>

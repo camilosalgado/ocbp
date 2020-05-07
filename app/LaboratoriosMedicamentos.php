@@ -10,8 +10,8 @@ class LaboratoriosMedicamentos extends Model
     protected $table = 'laboratorios_medicamentos';
 
     protected $fillable =[
-        'id_laboratorio',
-        'id_medicamento',
+        'med_id',
+        'lab_id',
         'user_id'
     ];
 

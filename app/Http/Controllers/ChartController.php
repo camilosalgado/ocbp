@@ -19,11 +19,11 @@ class ChartController extends Controller
     {
         $pie = [];
 
-        $altocosto = count(DB::table('medicamentos')->where('alto_costo','=', '1')->get());
-        $regulado = count(DB::table('medicamentos')->where('regulado','=', '1')->get());
+        $altocosto = count(DB::table('medicamentos')->where('alto_costo','=', 'S')->get());
+        $regulado = count(DB::table('medicamentos')->where('regulado','=', 'S')->get());
         $otros = count(DB::table('medicamentos')->where([
-            ['alto_costo', '=', '0'],
-            ['regulado', '=', '0']
+            ['alto_costo', '=', 'N'],
+            ['regulado', '=', 'N']
         ])->get());
 
         array_push($pie, [$altocosto, $regulado, $otros]);

@@ -1,10 +1,10 @@
 <template>
     <div class="main">
-        <div class="header">
+        <!--<div class="header">
             <SubHeader :userrole="userrol"></SubHeader>
-        </div>
+        </div>-->
         <div class="content">
-            <router-view></router-view>
+            <router-view :userrole="userrol"></router-view>
         </div>
     </div>
 

@@ -9,15 +9,15 @@ class Negociacion extends Model
     //
     protected $table = 'negociaciones';
     protected $fillable = [
-        "id_medicamento",
-        "id_laboratorio",
-        "valor_propuesta",
+        "med_id",
+        "lab_id",
+        "vpropuesta",
         "obs_descuento",
-        "valor_negociacion",
-        "precio_regulado",
+        "vnegociacion",
         "utilidad",
-        "aprobacion_farmacia",
-        "id_user",
+        "cantidad",
+        "aprob_farmacia",
+        "user_id",
         "estado"
     ];
 

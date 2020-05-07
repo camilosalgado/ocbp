@@ -20,7 +20,7 @@ import App from "./App.vue";
 Vue.use(VueRouter);
 Vue.use(Vuex);
 Vue.use(VueAxios, axios);
-Vue.use(ClientTable);
+Vue.use(ClientTable, 'bootstrap4');
 Vue.use(VAnimateCss);
 
 //New VueRouter Instance
@@ -34,6 +34,7 @@ const router = new VueRouter({
 Vue.component("v-select", vSelect);
 Vue.component('apexchart', VueApexCharts);
 Vue.component('app-component', App);
+Vue.component('SubHeader', require('./components/shared/SubHeader').default);
 
 
 //Base Url

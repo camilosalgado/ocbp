@@ -9,7 +9,7 @@ class LinkedMedicamentos extends Model
     //
     protected $table = 'linked_medicamentos';
     protected $fillable = [
-        'id_medicamento',
+        'med_id',
         'h_MSRESO',
         'h_DESCRIPCION',
         'h_MSNomG',

@@ -41,14 +41,14 @@ class AprobacionController extends Controller
 
     public function approveNegotiations(Request $request)
     {
-
         $query = Negociacion::findOrFail($request->id);
 
-        $query->aprobacion_farmacia = 1;
+        $query->aprob_farmacia = 1;
         $query->save();
 
         return response()->json('ok', 200);
     }
+
 
 
 

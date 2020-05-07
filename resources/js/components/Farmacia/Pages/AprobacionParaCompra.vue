@@ -4,14 +4,14 @@
             <div class="col-xl-12 col-md-12">
                 <div v-animate-css="'fadeIn'">
                     <v-client-table :data="rows" :columns="columns" :options="options">
-                        <span slot="aprobacion_farmacia" slot-scope="{row}">
-                            <i class="fa fa-circle" :style="row.aprobacion_farmacia == 1 ? 'color: green;' : ''"></i>
+                        <span slot="aprob_farmacia" slot-scope="{row}">
+                            <i class="fa fa-circle" :style="row.aprob_farmacia == 1 ? 'color: green;' : ''"></i>
                         </span>
                         <span slot="fec_nego" slot-scope="{row}">
                             {{ row.fec_nego | moment }}
                         </span>
-                        <span slot="valor_negociacion" slot-scope="{row}">
-                        <p>{{ new Intl.NumberFormat("es-CO", {minimumSignificantDigits: 1, style: "currency", currency:"COP"}).format(row.valor_negociacion) }}</p>
+                        <span slot="vnegociacion" slot-scope="{row}">
+                        <p>{{ new Intl.NumberFormat("es-CO", {minimumSignificantDigits: 1, style: "currency", currency:"COP"}).format(row.vnegociacion) }}</p>
                     </span>
                     </v-client-table>
                 </div>
@@ -28,12 +28,12 @@
                 rows: [],
                 columns: [
                     'negoid',
-                    'nombre_comercial',
                     'nombre_generico',
+                    'nombre_comercial',
                     'razon_social',
-                    'aprobacion_farmacia',
-                    'valor_negociacion',
-                    'fec_nego'
+                    'vnegociacion',
+                    'fec_nego',
+                    'aprob_farmacia',
                 ],
                 options: {
                     headings: {
@@ -41,8 +41,8 @@
                         nombre_comercial: 'Nombre Comercial',
                         nombre_generico: 'Nombre Genérico',
                         razon_social: 'Laboratorio',
-                        aprobacion_farmacia: 'Aprobado por orden de compra',
-                        valor_negociacion: 'Valor Negociación',
+                        aprob_farmacia: 'Aprobado por orden de compra',
+                        vnegociacion: 'Valor Negociación',
                         fec_nego: 'Fecha de Negociación'
                     },
                     sortable: ["nombre_comercial", "nombre_generico", "razon_social", "fec_nego"],

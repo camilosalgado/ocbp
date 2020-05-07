@@ -8,7 +8,7 @@
                         <h6 class="m-0 font-weight-bold text-primary">Asociar Medicamento con Hosvital</h6>
                     </div>
                     <div class="card-body">
-                        <form enctype="" class="user">
+                        <form enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -79,7 +79,7 @@
                     },
                     sortable: ['NGENERICO', 'CMEDICAMENTO', 'HCODIGO', 'HDESCRIPCION', 'HNGENERICO', 'FENLACE'],
                     filterable: ['NGENERICO', 'CMEDICAMENTO', 'HCODIGO', 'HDESCRIPCION', 'HNGENERICO', 'FENLACE'],
-                    perPage: 10
+                    perPage: 6
                 },
                 enlace: {}
             }
@@ -92,7 +92,7 @@
         methods: {
             getAllMedicamentoMakquia() {
                 let me = this;
-                let url = "http://laravel.local/getmedicamentotoneg";
+                let url = "http://laravel.local/getmedicamentodata";
                 axios
                     .get(url)
                     .then(res => {
@@ -134,7 +134,9 @@
                 axios
                     .post(url, me.enlace)
                     .then(res => {
-                        this.getLinkedMedicamentos();
+                        me.getLinkedMedicamentos();
+                        me.enlace.item1 = null;
+                        me.enlace.item2 = null;
                     })
                     .catch(err =>{
                         console.log(err);

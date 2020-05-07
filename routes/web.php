@@ -27,11 +27,12 @@ Route::group(['prefix' => 'auth'], function ($router) {
 
 //MEDICAMENTOS
 Route::get('getmedicamentos', 'MedicamentoController@getAllMedicamento');
+Route::get('getmedicamentodata', 'MedicamentoController@getMedicamentoData');
 Route::post('savemedicamento', 'MedicamentoController@saveMedicamento');
-Route::put('updatestatus/{id}', 'MedicamentoController@desactivateMedicamento');
-Route::get('getdatamedtonegotiations/{id}', 'MedicamentoController@getDataMedToNegotiations');
-Route::get('getlinkedmedicamentos', 'MedicamentoController@getLinkedMedicamentos');
-Route::post('savelinkedmedicamentos', 'MedicamentoController@saveLinkedMedicamentos');
+
+//LINKED MEDICAMENTOS
+Route::get('getlinkedmedicamentos', 'LinkedMedicamentosController@getLinkedMedicamentos');
+Route::post('savelinkedmedicamentos', 'LinkedMedicamentosController@saveLinkedMedicamentos');
 
 
 //LABORATORIOS
@@ -63,6 +64,7 @@ Route::get('getmedicamentotoneg', 'NegociacionController@getMedToNeg');
 Route::get('getnegotiations/{idmed}', 'NegociacionController@getNegotiationsByMed');
 Route::post('savenegotiations', 'NegociacionController@saveNegotiations');
 Route::get('getallnegociaciones', 'NegociacionController@getAllNegotiations');
+Route::post('updatestatus', 'NegociacionController@desactivateMedicamento');
 
 //CONTANDORES
 Route::get('countlaboratorios', function () {
@@ -72,10 +74,10 @@ Route::get('countmedicamentos', function () {
     return response()->json(count(DB::table('medicamentos')->get()));
 });
 Route::get('countaltocosto', function () {
-    return response()->json(count(DB::table('medicamentos')->where('alto_costo', '=', '1')->get()));
+    return response()->json(count(DB::table('medicamentos')->where('alto_costo', '=', 'S')->get()));
 });
 Route::get('countregulado', function () {
-    return response()->json(count(DB::table('medicamentos')->where('regulado', '=', '1')->get()));
+    return response()->json(count(DB::table('medicamentos')->where('regulado', '=', 'S')->get()));
 });
 
 
