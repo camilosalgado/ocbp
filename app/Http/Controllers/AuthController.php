@@ -44,6 +44,8 @@ class AuthController extends Controller
         $user->password = bcrypt($request->password);
         $user->id_rol = $request->id_rol;
         $user->estado = 1;
+        $user->created_at = date('Y-d-m H:i:s');
+        $user->updated_at = date('Y-d-m H:i:s');
 
         if ($user->save()) {
             return response()->json(['user' => $user]);

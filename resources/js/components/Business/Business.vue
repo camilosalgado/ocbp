@@ -71,16 +71,16 @@
                                                                      <label>Forma Farmaceutica:</label>
                                                                      <v-select :options="formasf"
                                                                               :reduce="descripcion => descripcion.id"
-                                                                              v-model="medicamentoToSave.id_formaf"
+                                                                              v-model="medicamentoToSave.formaf_id"
                                                                               label="descripcion"/>
                                                                 </div>
-                                                                <div class="form-group col-md">
+                                                                <!-- <div class="form-group col-md">
                                                                     <label>Presentación:</label>
                                                                     <v-select :options="formasp"
                                                                           :reduce="descripcion => descripcion.id"
-                                                                          v-model="medicamentoToSave.id_formap"
+                                                                          v-model="medicamentoToSave.formap"
                                                                           label="descripcion"/>
-                                                                </div>
+                                                                </div> -->
                                                             </div>
 
                                                             <div class="row">
@@ -103,11 +103,6 @@
                                                                            v-model="medicamentoToSave.altocosto = medicamentoData.alto_costo">
                                                                 </div>
                                                                 <div class="form-group col-md">
-                                                                    <label>Súper Alto Costo:</label>
-                                                                    <input class="form-control form-control-sm" type="text"
-                                                                           v-model="medicamentoToSave.super_acosto = medicamentoData.super_acosto">
-                                                                </div>
-                                                                <div class="form-group col-md">
                                                                     <label>Regulado:</label>
                                                                     <input class="form-control form-control-sm" type="text"
                                                                            v-model="medicamentoToSave.regulado = medicamentoData.regulado">
@@ -115,7 +110,7 @@
                                                                 <div class="form-group col-md">
                                                                     <label>Precio Regulado:</label>
                                                                     <input class="form-control form-control-sm" type="text"
-                                                                           v-model="medicamentoToSave.precio_regulado = medicamentoData.precio_regulado">
+                                                                           v-model="medicamentoToSave.precio_regulado = moneyFormat">
                                                                 </div>
                                                             </div>
 
@@ -192,6 +187,15 @@
                 medicamentoToSave: {}
             }
         },
+        computed: {
+            moneyFormat: function () {
+                return new Intl.NumberFormat("es-CO", {
+                    minimumSignificantDigits: 1,
+                    style: "currency",
+                    currency: "COP"
+                }).format(this.medicamentoData.precio_regulado);
+            }
+        },
         filters: {
             moment: function (date) {
                 return moment(date).format("LLLL");
@@ -200,13 +204,12 @@
         methods: {
             getAllMedicamento() {
                 let me = this;
-                let url = 'http://laravel.local/getmedicamentodata';
+                let url = 'http://190.131.222.108:8085/getmedicamentodata';
 
                 axios
                     .get(url)
                     .then(res => {
                         me.rows = res.data;
-                        console.log(res.data);
                     })
                     .catch(err => {
                         console.log(err);
@@ -214,7 +217,7 @@
             },
             getFormaFarmaceutica() {
                 let me = this;
-                let url = "http://laravel.local/getformafarmaceutica";
+                let url = "http://190.131.222.108:8085/getformafarmaceutica";
                 axios
                     .get(url)
                     .then(res => {
@@ -226,7 +229,7 @@
             },
             getFormaPresentacion() {
                 let me = this;
-                let url = "http://laravel.local/getformapresentacion";
+                let url = "http://190.131.222.108:8085/getformapresentacion";
                 axios
                     .get(url)
                     .then(res => {
@@ -238,12 +241,12 @@
             },
             getLastMedId() {
                 let me = this;
-                let url = "http://laravel.local/getlastmedid";
+                let url = "http://190.131.222.108:8085/getlastmedid";
 
                 axios
                     .get(url)
                     .then(res => {
-                        console.log();
+                        me.lastMedId = res.data;
                     })
                     .catch(err => {
                         console.log(err);
@@ -252,20 +255,20 @@
             openModalEditeMed(item) {
                 $('#showModalCreaMed').modal('show');
                 this.medicamentoData = item;
-                this.medicamentoToSave.id_formaf = item.id_formaf;
-                this.medicamentoToSave.id_formap = item.id_formap;
+                this.medicamentoToSave.formaf_id = item.IDFFARMACEUTICA;
             },
             closemodalEditMed() {
                 $('#showModalCreaMed').modal('hide');
             }
         },
-        mounted() {
+        created() {
             this.getLastMedId();
             this.getAllMedicamento();
             this.getFormaFarmaceutica();
             this.getFormaPresentacion();
         }
     }
+    
 </script>
 
 <style scoped>

@@ -30,8 +30,10 @@
         "moment": "^2.24.0",
         "sweetalert2": "^9.10.12",
         "v-animate-css": "0.0.3",
+        "v-money": "^0.8.1",
         "vue-apexcharts": "^1.5.3",
         "vue-axios": "^2.1.5",
+        "vue-currency-input": "^1.18.3",
         "vue-select": "^3.10.1",
         "vue-tables-2": "^2.0.20"
     }

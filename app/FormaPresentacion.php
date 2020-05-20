@@ -14,6 +14,8 @@ class FormaPresentacion extends Model
         'estado'
     ];
 
+    public $timestamps = false;
+
     public function medicamento()
     {
         return $this->belongsTo(Medicamento::class);

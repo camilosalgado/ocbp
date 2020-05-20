@@ -141,7 +141,7 @@
         },
         methods: {
             getTipoDocs() {
-                let url = "http://laravel.local/gettipodocs";
+                let url = "http://190.131.222.108:8085/gettipodocs";
 
                 axios.get(url)
                     .then(res => {
@@ -152,7 +152,7 @@
                     })
             },
             getRoles() {
-                let url = "http://laravel.local/getroles";
+                let url = "http://190.131.222.108:8085/getroles";
 
                 axios.get(url)
                     .then(res => {
@@ -164,7 +164,7 @@
             },
             register() {
                 let me = this;
-                let url = 'http://laravel.local/auth/register';
+                let url = 'http://190.131.222.108:8085/auth/register';
 
                 if (this.validateForm()) {
                     return;

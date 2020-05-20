@@ -14,7 +14,8 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Fonts Awesome-->
-    <link href="{{ asset('css/all.min.css') }}" rel="stylesheet">
+    <!--<link href="{{ asset('css/all.min.css') }}" rel="stylesheet">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">

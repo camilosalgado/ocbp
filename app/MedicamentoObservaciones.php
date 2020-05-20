@@ -15,6 +15,8 @@ class MedicamentoObservaciones extends Model
         'user_id'
     ];
 
+    public $timestamps = false;
+
     public function medicamentos()
     {
         return $this->hasMany(Medicamento::class);

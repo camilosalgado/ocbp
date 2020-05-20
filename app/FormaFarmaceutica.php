@@ -15,6 +15,8 @@ class FormaFarmaceutica extends Model
         'estado'
     ];
 
+    public $timestamps = false;
+
     public function user()
     {
         return $this->hasOne(User::class);

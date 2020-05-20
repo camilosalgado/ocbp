@@ -7,12 +7,12 @@
             </router-link>
         </li>
 
-        <li class="nav-item" v-if="userrol == 1 || userrol == 2">
+        <li class="nav-item" v-if="userrol == 1 || userrol == 2 || userrol == 5 || userrol == 6">
             <router-link to="/business" class="nav-link">
                 <i class="fa fa-dollar-sign"></i> Negociaciones</router-link>
         </li>
 
-        <li class="nav-item" v-if="userrol == 6">
+        <li class="nav-item" v-if="userrol == 7">
             <router-link to="/ordenescompra" class="nav-link">
                 <i class="fa fa-clipboard-check"></i> Ordenes de Compra</router-link>
         </li>
@@ -31,16 +31,16 @@
         </li>
 
         <!-- DROPDOWN MAESTROS-->
-        <li class="nav-item dropdown" v-if="userrol == 1 || userrol == 4">
+        <li class="nav-item dropdown" v-if="userrol == 1 || userrol == 5">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkMaestros" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-cogs"></i> Maestros
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkMaestros">
-                <router-link to="/medicamentos" class="dropdown-item" v-if="userrol == 1">
+                <router-link to="/medicamentos" class="dropdown-item" v-if="userrol == 1 || userrol == 5">
                     <i class="fa fa-pills" aria-hidden="true"></i> Medicamentos</router-link>
-                <router-link to="/register" class="dropdown-item" v-if="userrol == 1">
+                <router-link to="/users" class="dropdown-item" v-if="userrol == 1">
                     <i class="fa fa-users"></i> Usuarios</router-link>
-                <router-link to="/laboratorios" class="dropdown-item" v-if="userrol == 1 || userrol == 4">
+                <router-link to="/laboratorios" class="dropdown-item" v-if="userrol == 1 || userrol == 5">
                     <i class="fas fa-microscope"></i> Laboratorios</router-link>
             </div>
         </li>

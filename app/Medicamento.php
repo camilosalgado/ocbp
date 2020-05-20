@@ -8,6 +8,7 @@ class Medicamento extends Model
 {
     //
     protected $table = 'medicamentos';
+
     protected $fillable = [
         'codigo_medicamento',
         'cod_insumo',
@@ -26,7 +27,11 @@ class Medicamento extends Model
         'precio_regulado',
         'user_id',
         'estado',
+        'created_at',
+        'updated_at',
     ];
+
+    public $timestamps = false;
 
     public function user()
     {

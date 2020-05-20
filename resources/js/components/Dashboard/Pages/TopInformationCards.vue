@@ -99,7 +99,7 @@
         methods: {
             getAllMedicamentos() {
                 let me = this;
-                let url = 'http://laravel.local/countmedicamentos';
+                let url = 'http://190.131.222.108:8085/countmedicamentos';
 
                 axios.get(url)
                     .then(res => {
@@ -111,7 +111,7 @@
             },
             getAllLabs() {
                 let me = this;
-                let url = 'http://laravel.local/countlaboratorios';
+                let url = 'http://190.131.222.108:8085/countlaboratorios';
 
                 axios.get(url)
                     .then(res => {
@@ -123,7 +123,7 @@
             },
             getAltoCosto() {
                 let me = this;
-                let url = 'http://laravel.local/countaltocosto';
+                let url = 'http://190.131.222.108:8085/countaltocosto';
 
                 axios.get(url)
                     .then(res => {
@@ -135,7 +135,7 @@
             },
             getRegulado() {
                 let me = this;
-                let url = 'http://laravel.local/countregulado';
+                let url = 'http://190.131.222.108:8085/countregulado';
 
                 axios.get(url)
                     .then(res => {

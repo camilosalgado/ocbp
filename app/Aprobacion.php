@@ -12,7 +12,11 @@ class Aprobacion extends Model
         'nro_orden_hosvital',
         'estado',
         'user_id',
+        'created_at',
+        'updated_at'
     ];
+
+    public $timestamps = false;
 
     public function user()
     {

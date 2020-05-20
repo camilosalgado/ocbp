@@ -74,6 +74,7 @@
 </template>
 
 <script>
+import Swal from "sweetalert2";
     export default {
         name: "Laboratorios",
         data() {
@@ -110,7 +111,7 @@
         methods: {
             getLabs() {
                 let me = this;
-                let url = 'http://laravel.local/getlaboratorios';
+                let url = 'http://190.131.222.108:8085/getlaboratorios';
 
                 axios
                     .get(url)
@@ -123,11 +124,12 @@
             },
             createLabs() {
                 let me = this;
-                let url = 'http://laravel.local/createlaboratorios';
+                let url = 'http://190.131.222.108:8085/createlaboratorios';
 
                 axios
                     .post(url, me.laboratorio)
                     .then(res => {
+                        
                         me.rows.push(res.data);
                         me.clearFields();
                     })

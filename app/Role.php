@@ -10,6 +10,8 @@ class Role extends Model
     protected $table = 'roles';
     protected $fillable = ['descripcion', 'user_id', 'estado'];
 
+    public $timestamps = false;
+
     public function user()
     {
         return $this->hasOne(User::class);

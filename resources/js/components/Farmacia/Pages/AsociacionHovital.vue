@@ -28,7 +28,7 @@
                     <div class="card-footer">
                         <div class="col-md-12 text-right">
                             <div class="form-group">
-                                <button class="btn btn-sm btn-warning">
+                                <button class="btn btn-sm btn-warning" @click="clearFields()">
                                     <i class="fa fa-brush"></i> Limpiar
                                 </button>
                                 <button class="btn btn-sm btn-success" @click="saveLinkedMedicamento()">
@@ -92,7 +92,7 @@
         methods: {
             getAllMedicamentoMakquia() {
                 let me = this;
-                let url = "http://laravel.local/getmedicamentodata";
+                let url = "http://190.131.222.108:8085/getmedicamentodata";
                 axios
                     .get(url)
                     .then(res => {
@@ -116,7 +116,7 @@
             },
             getLinkedMedicamentos() {
                 let me = this;
-                let url = "http://laravel.local/getlinkedmedicamentos";
+                let url = "http://190.131.222.108:8085/getlinkedmedicamentos";
 
                 axios
                     .get(url)
@@ -129,7 +129,7 @@
             },
             saveLinkedMedicamento() {
                 let me = this;
-                let url = "http://laravel.local/savelinkedmedicamentos";
+                let url = "http://190.131.222.108:8085/savelinkedmedicamentos";
 
                 axios
                     .post(url, me.enlace)
@@ -141,6 +141,10 @@
                     .catch(err =>{
                         console.log(err);
                     })
+            },
+            clearFields(){
+                this.enlace.item1 = null;
+                this.enlace.item2 = null;
             }
         },
         created() {

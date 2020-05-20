@@ -8,13 +8,18 @@ class Laboratorio extends Model
 {
     //
     protected $table = 'laboratorios';
+    public $timestamps = false;
+
     protected $fillable = [
         'razon_social',
         'nit',
+        'farmacia',
         'direccion',
         'telefono',
         'user_id',
-        'estado'
+        'estado',
+        'created_at',
+        'updated_at'
     ];
 
     public function laboratoriomedicamento()

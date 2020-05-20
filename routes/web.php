@@ -29,6 +29,7 @@ Route::group(['prefix' => 'auth'], function ($router) {
 Route::get('getmedicamentos', 'MedicamentoController@getAllMedicamento');
 Route::get('getmedicamentodata', 'MedicamentoController@getMedicamentoData');
 Route::post('savemedicamento', 'MedicamentoController@saveMedicamento');
+Route::post('saveeditmedicamento', 'MedicamentoController@saveEditMedicamento');
 
 //LINKED MEDICAMENTOS
 Route::get('getlinkedmedicamentos', 'LinkedMedicamentosController@getLinkedMedicamentos');
@@ -68,7 +69,7 @@ Route::post('updatestatus', 'NegociacionController@desactivateMedicamento');
 
 //CONTANDORES
 Route::get('countlaboratorios', function () {
-    return response()->json(count(DB::table('laboratorios')->get()));
+    return response()->json(count(DB::table('laboratorios')->where('farmacia', '=', 'S')->get()));
 });
 Route::get('countmedicamentos', function () {
     return response()->json(count(DB::table('medicamentos')->get()));
@@ -93,7 +94,9 @@ Route::get('countregulado', function () {
     //Route::post('saveapproveorder', 'AprobacionController@saveAprroveOrder' );
 
 
-    Route::get('g', 'AprobacionController@pruebaGuzzle');
+    Route::get('g', function () {
+        return response()->json(count(DB::table('medicamentos')->where('regulado', '=', 'S')->get()));
+    });
 
 Route::get('/{any?}', function () {
     return view('home');

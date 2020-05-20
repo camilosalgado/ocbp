@@ -4,13 +4,21 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xl-3 col-sm-12 col-md-12 d-flex align-items-center justify-content-center"
-                 style="min-height: 100vh !important; background: rgba(0,0,0,0.5) !important;">
+                 style="height: 100vh !important; background: rgba(0,0,0,0.5) !important;">
                 <div class="card" style="width: 80%; min-height: 40%; background: transparent !important; border: none !important;">
                     <div class="card-body">
                         <div class="form-group row mb-5 mt-4">
                             <div class="col-md-12 text-center">
-                                <h1 style="font-weight: bolder; color: white !important;">Bienvenido a</h1>
-                                <img src="{{ asset('assets/images/logo.png') }}" alt="Logo">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h1 style="font-weight: bolder; color: white !important;">Bienvenido a</h1>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12" style="padding: 0; margin: 0">
+                                        <img src="{{ asset('assets/images/logo.png') }}" alt="Logo">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <form method="POST" action="{{ route('login') }}">
@@ -45,7 +53,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row">
+                            {{--<div class="form-group row">
                                 <div class="col-md-12">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" name="remember"
@@ -56,7 +64,7 @@
                                         </label>
                                     </div>
                                 </div>
-                            </div>
+                            </div>--}}
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-12">
@@ -65,14 +73,17 @@
                                     </button>
 
                                     @if (Route::has('password.request'))
-                                        <a class="btn btn-link" href="{{ route('password.request') }}" style="color: white">
-                                            {{ __('Olvidé Mi Contreña?') }}
+                                        <a class="btn btn-link btn-block text-center" href="{{ route('password.request') }}" style="color: white;">
+                                            {{ __('Olvidé Mi Contraseña?') }}
                                         </a>
                                     @endif
                                 </div>
                             </div>
                         </form>
                     </div>
+                </div>
+                <div class="versionbox">
+                    <p>V.1.5.0</p>
                 </div>
             </div>
             <div class="col-xl-9 d-flex align-items-center justify-content-center">

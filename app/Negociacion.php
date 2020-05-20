@@ -8,6 +8,9 @@ class Negociacion extends Model
 {
     //
     protected $table = 'negociaciones';
+
+    public $timestamps = false;
+
     protected $fillable = [
         "med_id",
         "lab_id",
@@ -18,7 +21,9 @@ class Negociacion extends Model
         "cantidad",
         "aprob_farmacia",
         "user_id",
-        "estado"
+        "estado",
+        'created_at',
+        'updated_at'
     ];
 
     public function medicamento()

@@ -47,7 +47,7 @@
         methods: {
             fillData() {
                 let me = this;
-                let url = 'http://laravel.local/datapie';
+                let url = 'http://190.131.222.108:8085/datapie';
                 //let arrayv = [];
 
                 axios.get(url).then(res => {

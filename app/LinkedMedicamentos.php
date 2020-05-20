@@ -17,6 +17,8 @@ class LinkedMedicamentos extends Model
         'user_id'
     ];
 
+    public $timestamps = false;
+
     public function medicamento()
     {
         return $this->hasOne(Medicamento::class);

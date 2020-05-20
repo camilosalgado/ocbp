@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-primary shadow-sm mb-5" style="color: white;">
+<nav class="navbar navbar-expand-md navbar-dark bg-primary shadow-sm mb-2" style="color: white;">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ url('/login') }}" style="font-weight: bold; padding: 0;">
             <img src="{{ asset('assets/images/logo_icon.png') }}" alt="NavbarBrandLogo" style="max-height: 35px;">

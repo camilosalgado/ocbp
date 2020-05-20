@@ -27,6 +27,8 @@ class AprobacionController extends Controller
             'nro_orden_hosvital' => $request->NRO_ORDEN,
             'estado' => 1,
             'user_id' => $user,
+            'created_at' => date('Y-d-m H:i:s'),
+            'updated_at' => date('Y-d-m H:i:s'),
         ]);
 
         return response('ok',200);

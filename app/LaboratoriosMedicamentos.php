@@ -9,10 +9,14 @@ class LaboratoriosMedicamentos extends Model
     //
     protected $table = 'laboratorios_medicamentos';
 
+    public $timestamps = false;
+
     protected $fillable =[
         'med_id',
         'lab_id',
-        'user_id'
+        'user_id',
+        'created_at',
+        'updated_at',
     ];
 
     public function medicamento()

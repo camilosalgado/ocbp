@@ -19,7 +19,9 @@ class NegociacionController extends Controller
         $lab_med = LaboratoriosMedicamentos::create([
             'med_id' => $request->cod_med,
             'lab_id' => $request->lab_idNeg,
-            'user_id' => $user
+            'user_id' => $user,
+            'created_at' => date('Y-d-m H:i:s'),
+            'updated_at' => date('Y-d-m H:i:s'),
         ]);
 
         $negociacion = Negociacion::create([
@@ -32,7 +34,9 @@ class NegociacionController extends Controller
             'cantidad' => $request->cantidad,
             'aprob_farmacia' => 0,
             'user_id' => $user,
-            'estado' => 1
+            'estado' => 1,
+            'created_at' => date('Y-d-m H:i:s'),
+            'updated_at' => date('Y-d-m H:i:s'),
         ]);
 
         $negociacionForward = DB::table('negociaciones as n')

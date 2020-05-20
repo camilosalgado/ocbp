@@ -19,8 +19,8 @@ export const routes = [
         }
     },
     {
-        name: "register",
-        path: "/register",
+        name: "users",
+        path: "/users",
         component: UserRegister,
         meta: {
             requiresAuth: true,
@@ -95,9 +95,9 @@ export const routes = [
         path: "/404",
         component: NotFound
     },
-    {
+    /*{
         path: "*",
         component: require('./components/NotFound/NotFound').default,
-    },
+    },*/
 ];
 

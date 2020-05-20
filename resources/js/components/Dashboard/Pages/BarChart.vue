@@ -62,7 +62,7 @@
             );
             chart.render();
 
-            let url = "http://laravel.local/databar";
+            let url = "http://190.131.222.108:8085/databar";
             axios.get(url)
                 .then(res => {
                     chart.updateSeries([{

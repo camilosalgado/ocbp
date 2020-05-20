@@ -9,6 +9,8 @@ class Grupo extends Model
     //
     protected $table = 'grupos';
 
+    public $timestamps = false;
+
     public function medicamento()
     {
         return $this->belongsTo(Medicamento::class);

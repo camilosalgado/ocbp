@@ -12,7 +12,7 @@ class LaboratorioController extends Controller
     //
     public function getLabs()
     {
-        return response()->json(DB::table('laboratorios')->get());
+        return response()->json(DB::table('laboratorios')->where('farmacia', '=', 'S')->get());
     }
 
     public function createLabs(Request $request)
@@ -31,10 +31,13 @@ class LaboratorioController extends Controller
             $lab = Laboratorio::create([
                'razon_social' => strtoupper($request->razon_social),
                 'nit' => $request->nit,
+                'farmacia' =>  'S',
                 'direccion' => strtoupper($request->direccion),
                 'telefono' => $request->telefono,
                 'user_id' => $user,
-                'estado' => 1
+                'estado' => 1,
+                'created_at' => date('Y-d-m H:i:s'),
+                'updated_at' => date('Y-d-m H:i:s'),
             ]);
 
             return response()->json($lab);

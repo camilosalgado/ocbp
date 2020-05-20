@@ -58,7 +58,7 @@
         },
         created() {
             let me = this;
-            let url = "http://laravel.local/getapprovednegotiations";
+            let url = "http://190.131.222.108:8085/getapprovednegotiations";
 
             axios.get(url)
                 .then(res => {

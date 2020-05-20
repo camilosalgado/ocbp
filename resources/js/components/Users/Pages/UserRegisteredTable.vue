@@ -65,7 +65,7 @@
             },
             getUsers() {
                 let me = this;
-                let url = 'http://laravel.local/getusers';
+                let url = 'http://190.131.222.108:8085/getusers';
 
                 axios.get(url)
                     .then(res => {

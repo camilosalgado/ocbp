@@ -15,6 +15,8 @@ import { ClientTable } from "vue-tables-2";
 import vSelect from "vue-select";
 import VAnimateCss from 'v-animate-css';
 import App from "./App.vue";
+import money from 'v-money';
+
 
 //Vue Used Packages
 Vue.use(VueRouter);
@@ -22,6 +24,7 @@ Vue.use(Vuex);
 Vue.use(VueAxios, axios);
 Vue.use(ClientTable, 'bootstrap4');
 Vue.use(VAnimateCss);
+Vue.use(money, {precision: 0, prefix: '$ ', masked: false});
 
 //New VueRouter Instance
 const router = new VueRouter({
@@ -29,6 +32,8 @@ const router = new VueRouter({
     mode: 'history',
     routes
 });
+
+
 
 //General Components
 Vue.component("v-select", vSelect);
