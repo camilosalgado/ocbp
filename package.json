@@ -26,7 +26,7 @@
         "vuex": "^3.2.0"
     },
     "dependencies": {
-        "apexcharts": "^3.18.1",
+        "apexcharts": "^3.24.0",
         "moment": "^2.24.0",
         "sweetalert2": "^9.10.12",
         "v-animate-css": "0.0.3",
